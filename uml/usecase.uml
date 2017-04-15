@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+actor :ユーザー :as user
+actor :管理者: as admin
+
+
+user --(アカウント登録)
+user --(メッセージ送信)
+user --(メッセージ受信)
+user --(アカウント削除)
+
+admin --(ユーザの使用停止)
+admin --(ユーザの使用再開)
+admin --(ユーザの削除)
+
+@enduml
