@@ -1,0 +1,18 @@
+@startuml
+
+class BaseEntity{
+	id
+	updated_at
+	created_at
+}
+
+class UserAccountEntity{
+	username
+	password
+	admin_flag
+}
+
+
+
+@enduml
+
