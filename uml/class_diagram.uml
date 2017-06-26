@@ -1,15 +1,37 @@
 @startuml
 
-class BaseEntity{
-	id
-	updated_at
-	created_at
-}
+package model {
+	class BaseEntity{
+		id
+		creator
+		udator
+		updated_at
+		created_at
+	}
 
-class UserAccountEntity{
-	username
-	password
-	admin_flag
+	class UserEntity{
+		username
+		password
+		admin_flag
+	}
+
+	class MessageEntity {
+	  message
+		from_user_id
+	}
+
+	class MessageUserEntity {
+	  message_id
+		dst_user_id
+	}
+
+	BaseEntity <|-- UserEntity
+	BaseEntity <|-- MessageEntity
+	BaseEntity <|-- MessageUserEntity
+
+	UserEntity "1" o-- "0..*" MessageEntity
+	MessageEntity  "1" o-- "0..*" MessageUserEntity
+	UserEntity "1" o-- "0..*" MessageUserEntity
 }
 
 
