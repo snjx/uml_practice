@@ -10,7 +10,6 @@ database :DB : as DB
   PCまたは携帯端末のブラウザからアクセス。
 '/
 package "web interface" {
-	note top : "PCまたは携帯端末のブラウザからアクセス。" as package
  	user --(自アカウント登録)
 	user --(ログイン)
 	user --(自アカウントパスワード変更)
@@ -24,20 +23,19 @@ package "web interface" {
   専用のアプリケーションを作成してAPIで操作する。
 '/
 package "local application" {
-	note top : "専用のアプリケーションを作成してAPIで操作する。" as package
 	(ログイン)--admin
 	(ログアウト)--admin
 	(管理者認証)--admin
 	(ログアウト)--admin
 	(ユーザアカウントの作成)--admin
 	(ユーザアカウントの操作)--admin
-	note right of ユーザアカウントの操作: 管理者フラグの操作ができる。
 	(ユーザアカウントの使用停止) -- admin
 	(ユーザアカウントの使用再開) -- admin
 	(ユーザユーザアカウントの削除) -- admin
 	(他アカウントへメッセージ送信)--admin
 	(他アカウントからのメッセージ受信)--admin
 }
+note right of ユーザアカウントの操作: 作成されたユーザを管理者に変更できる。
 
 (自アカウント登録)->DB
 (自アカウントパスワード変更)->DB
