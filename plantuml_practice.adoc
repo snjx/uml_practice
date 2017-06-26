@@ -42,7 +42,7 @@ WindowsでPlantUMLを使えるようにするには…
 == ユースケース
 
 ユースケースとは、ひとことでいうと表現力豊かな箇条書きです。 +
-image:uml/usecase.svg[ユースケースサンプル]
+image:uml/usecase.png[ユースケースサンプル]
 
 
 == 画面設計
@@ -58,7 +58,7 @@ image:uml/usecase.svg[ユースケースサンプル]
 == クラス図
 
 外側を大まかに決めたら、次は中身を決めていきます。 +
-image:uml/class_diagram.svg[クラス図]
+image:uml/class_diagram.png[クラス図]
 
 == シーケンス図
 
