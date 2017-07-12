@@ -44,12 +44,21 @@ WindowsでPlantUMLを使えるようにするには…
 
 ユースケースとは、ひとことでいうと表現力豊かな箇条書きです。 +
 image:uml/usecase.png[ユースケースサンプル]
-
+----
+include::uml/usecase.uml[ユースケース]
+----
 
 == 画面設計
 
 画面設計は意外と工数のかかる作業です。 +
 本来のUMLには画面設計にあたるドキュメントはありませんが、簡単な業務システムならば、PlantUMLで設計することが可能です。 +
+
+たとえば、以下のようなログイン画面は… +
+image:uml/salt/login.png[ログイン] +
+このようなテキストで表現できます。 +
+----
+include::uml/salt/login.uml[login.uml]
+----
 
 == 画面遷移
 
