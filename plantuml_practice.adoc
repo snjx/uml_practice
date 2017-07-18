@@ -65,6 +65,11 @@ include::uml/salt/login.uml[login.uml]
 
 それぞれの見た目を画面設計で作った後、または作ると同時に、画面遷移も決めていかなけらばなりません。 +
 これをUMLで表現する場合は、ロバストネス図というものを作ります。 +
+image:uml/screen_transition.png[画面遷移図]
+----
+include::uml/screen_transition.uml[画面遷移図]
+----
+
 
 == クラス図
 

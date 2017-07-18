@@ -6,15 +6,25 @@ boundary ログイン画面 as login
 boundary メッセージ一覧画面 as messageTable
 boundary メッセージ入力 as messageInput
 
-control ユーザ認証 as userControl
+control ユーザ認証 as userCredential
+control メッセージ一覧取得 as messageGet
+control メッセージ送信 as messageSend
 
 entity ユーザ as users
-entity メッセージ as messages
-entity ユーザメッセージ as usermessages
+entity メッセージ内容 as messages
+entity ユーザとメッセージ as usermessages
 
 
-login --> userControl : 認証開始
-userControl --> users : アカウントとパスワードを確認
-messageTable <-- userControl
+login --> userCredential : 認証開始
+userCredential --> users : アカウントとパスワードを確認
+messageTable <-- userCredential : 認証できた
+messageTable <--> messageGet : ユーザに紐づいたメッセージを要求
+messageGet --> usermessages
+usermessages -- messages
+
+messageTable -> messageInput
+messageInput --> messageSend
+messageSend --> usermessages
+usermessages -- messages
 
 @enduml
