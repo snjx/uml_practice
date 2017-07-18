@@ -1,4 +1,5 @@
 @startuml
+title クラス図
 
 package model {
 	class BaseEntity{

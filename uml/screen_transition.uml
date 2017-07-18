@@ -1,0 +1,20 @@
+@startuml
+title 画面遷移図（ロバストネス図）
+left to right direction
+
+boundary ログイン画面 as login
+boundary メッセージ一覧画面 as messageTable
+boundary メッセージ入力 as messageInput
+
+control ユーザ認証 as userControl
+
+entity ユーザ as users
+entity メッセージ as messages
+entity ユーザメッセージ as usermessages
+
+
+login --> userControl : 認証開始
+userControl --> users : アカウントとパスワードを確認
+messageTable <-- userControl
+
+@enduml
