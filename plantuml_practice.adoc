@@ -31,20 +31,53 @@ PlantUMLによる設計を簡単な例題をもとに説明します。 +
 開発環境は、というか、UMLを書くためのマシンは、どうしてもWindowsが中心ならざるを得ません。 +
 WindowsにおけるUMLの記述方法はいくつかあります。 +
 
-* astahなどを使う。
-* ドロー系ソフトを使う
+* astahを使う。
+* ドロー系の機能を持ったソフトを使う
   ** Excel
   ** PowerPoint
 * PlantUMLを使う
+
+それぞれ一長一短があります。 +
+link:http://astah.change-vision.com/ja/product/astah-community.html[astah]はとても優秀なアプリケーションですが、Community版は商用利用ができないなど若干の枷があります。 +
+図形をかける各種アプリケーションを使うのは、柔軟性は高いですが、まずもってUMLとはなんぞやといったあたりをクリアしないと作れません。 +
+そこで登場するのがPlantUMLです。 +
 
 === PlantUMLを使えるようにする。
 
 WindowsでPlantUMLを使えるようにするには…
 
+* PlantUML本家
+http://plantuml.com/
+
+* 日本語の解説。インストールから例題まで。
+http://yohshiy.blog.fc2.com/blog-entry-152.html
+
+インストールに関しては、Chocolatey入れてからのほうが早いです。
+* chocolatey
+https://chocolatey.org/install
+  choco install jdk8 -y
+  choco install graphviz -y
+  choco install plantuml -y
+
+もともとのplantumlは、Javaでつくられたコマンドですが、ライブプレビューができる環境もあります。
+検索するとAtomエディタでの例がたくさん出てきますが、Windows7、8だとプラグインの最近のVerでは
+うまくいかないようです（Windows10ならうまくいきます）。
+
+vscodeならプレビュー聞きますのでそっちで試してみてください。
+
+* vscode
+https://code.visualstudio.com/
+
+* [Visual Studio Code][Windows]
+PlantUMLの環境を設定する（シンタックスハイライト+リアルタイムプレビュー）
+https://qiita.com/koara-local/items/e7a7a7d68a4f99a91ab1
+
+
 == ユースケース
 
 ユースケースとは、ひとことでいうと表現力豊かな箇条書きです。 +
 image:uml/usecase.png[ユースケースサンプル]
+
 ----
 include::uml/usecase.uml[ユースケース]
 ----
@@ -75,7 +108,6 @@ include::uml/screen_transition.uml[画面遷移図]
 
 外側を大まかに決めたら、次は中身を決めていきます。 +
 image:uml/class_diagram.png[クラス図]
-
 
 
 == 終わりに
