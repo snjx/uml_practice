@@ -592,10 +592,10 @@ WindowsにおけるUMLの記述方法はいくつかあります。<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>astahなどを使う。</p>
+<p>astahを使う。</p>
 </li>
 <li>
-<p>ドロー系ソフトを使う</p>
+<p>ドロー系の機能を持ったソフトを使う</p>
 <div class="ulist">
 <ul>
 <li>
@@ -612,10 +612,57 @@ WindowsにおけるUMLの記述方法はいくつかあります。<br></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>それぞれ一長一短があります。<br>
+<a href="http://astah.change-vision.com/ja/product/astah-community.html">astah</a>はとても優秀なアプリケーションですが、Community版は商用利用ができないなど若干の枷があります。<br>
+図形をかける各種アプリケーションを使うのは、柔軟性は高いですが、まずもってUMLとはなんぞやといったあたりをクリアしないと作れません。<br>
+そこで登場するのがPlantUMLです。<br></p>
+</div>
 <div class="sect2">
 <h3 id="_plantumlを使えるようにする">PlantUMLを使えるようにする。</h3>
 <div class="paragraph">
 <p>WindowsでPlantUMLを使えるようにするには…</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PlantUML本家
+<a href="http://plantuml.com/" class="bare">http://plantuml.com/</a></p>
+</li>
+<li>
+<p>日本語の解説。インストールから例題まで。
+<a href="http://yohshiy.blog.fc2.com/blog-entry-152.html" class="bare">http://yohshiy.blog.fc2.com/blog-entry-152.html</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>インストールに関しては、Chocolatey入れてからのほうが早いです。
+* chocolatey
+<a href="https://chocolatey.org/install" class="bare">https://chocolatey.org/install</a>
+  choco install jdk8 -y
+  choco install graphviz -y
+  choco install plantuml -y</p>
+</div>
+<div class="paragraph">
+<p>もともとのplantumlは、Javaでつくられたコマンドですが、ライブプレビューができる環境もあります。
+検索するとAtomエディタでの例がたくさん出てきますが、Windows7、8だとプラグインの最近のVerでは
+うまくいかないようです（Windows10ならうまくいきます）。</p>
+</div>
+<div class="paragraph">
+<p>vscodeならプレビュー聞きますのでそっちで試してみてください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>vscode
+<a href="https://code.visualstudio.com/" class="bare">https://code.visualstudio.com/</a></p>
+</li>
+<li>
+<p>[Visual Studio Code][Windows]
+PlantUMLの環境を設定する（シンタックスハイライト+リアルタイムプレビュー）
+<a href="https://qiita.com/koara-local/items/e7a7a7d68a4f99a91ab1" class="bare">https://qiita.com/koara-local/items/e7a7a7d68a4f99a91ab1</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -787,7 +834,7 @@ usermessages -- messages
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-16 20:45:48 JST
+Last updated 2017-10-08 16:07:10 JST
 </div>
 </div>
 </body>
