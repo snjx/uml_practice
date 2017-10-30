@@ -1,0 +1,19 @@
+@startuml
+participant idP as idP
+actor クライアント as cli 
+participant TTS_E1 as E1
+participant TTS_E0 as E0
+
+cli -> E1 : 画面リクエスト
+activate E1
+
+E1 -> DB : セッションでselect文発行
+activate DB
+DB -> E1 : レコードがない
+deactivate DB
+
+
+E1 -> cli : E0リダイレクト
+deactivate E1
+
+@enduml
