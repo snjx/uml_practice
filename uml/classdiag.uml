@@ -2,7 +2,7 @@
 title クラス図
 left to right direction
 
-package jp.co.dialonet.practic {
+package jp.co.sample.practic {
 
   package controller {
     class PostController
