@@ -1,0 +1,24 @@
+@startuml
+title ER図
+top to bottom direction
+
+package "maridb : member_manage" as mariadb <<database>>{
+  entity "部署マスタ（mst_post）" as mst_post {
+    + 部署コード：post_code [PK]
+    --
+    部署名：name
+  }
+
+  entity "社員マスタ（mst_member）" as mst_member {
+    + 社員ID：member_id [PK]
+    --
+    社員名: member_name
+    所属部署：post_id
+  }
+}
+
+mst_post ||-o{ mst_member : post_code == post_id
+
+note top of mariadb : user : root \n password: password123
+
+@enduml

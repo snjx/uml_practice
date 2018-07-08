@@ -1,0 +1,36 @@
+@startuml
+
+actor ユーザ as user
+
+box "SpringBoot組み込みtomcat" #lightblue
+  boundary 部署画面ajaxpost.html as posthtml
+  control PostController as postctrl
+  control PostService as PostService
+  entity PostRepository as PostRepository
+end box
+
+Database member_manage
+
+user -> posthtml : 画面表示または検索ボタン押下
+activate posthtml
+  posthtml -> postctrl : PostList
+  activate postctrl
+    postctrl -> PostService : getList
+    activate PostService
+      PostService -> PostRepository : searchlist
+      activate PostRepository
+        PostRepository -> member_manage : select文実施 where name like 引数
+        activate member_manage
+        PostRepository <- member_manage : 実行結果(PostEntityのリスト)
+        deactivate member_manage
+      PostService <- PostRepository : 部署のリスト
+      deactivate PostRepository
+    postctrl <- PostService
+    deactivate PostService
+  posthtml <- postctrl : jsonで部署の一覧
+  deactivate postctrl
+user <- posthtml : 一覧画面表示
+deactivate posthtml
+
+
+@enduml

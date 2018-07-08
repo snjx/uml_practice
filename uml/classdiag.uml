@@ -1,0 +1,65 @@
+@startuml
+title クラス図
+left to right direction
+
+package jp.co.dialonet.practic {
+
+  package controller {
+    class PostController
+  }
+
+  package service {
+    class PostService
+  }
+
+  package model {
+    object PostSearchReq
+    object PostListRes
+  }
+
+  package entity {
+    entity PostEntity
+  }
+
+  package repository {
+    interface PostRepository
+  }
+}
+
+class PostController {
+  - PostService postService
+  + searchPostList()
+}
+PostController --|> PostService : APIの動作はserviceが担う。\nControllerは呼び出すのみ
+PostController -> PostSearchReq : 画面から検索文字列用Jsonを受け取るために使う。
+PostController -> PostListRes : 画面へ、部署のリストを送るために使う。
+
+class PostService {
+  - PostRepository postRepository
+  + searchPostList()
+}
+PostService ---|> PostRepository : DBの操作はRepositoryが担う
+PostService --> PostSearchReq : 検索文字列
+PostService --> PostListRes :　部署の一覧リスト
+
+object PostSearchReq{
+  + postCode
+}
+
+object PostListRes {
+  + postList:List<PostEntity>
+}
+PostListRes -|> PostEntity : 部署をリストで持つ。
+
+entity PostEntity{
+  + 部署コード：post_code [PK]
+  --
+  部署名：name
+}
+
+interface PostRepository {
+  findByNameLike()
+}
+PostRepository  -> PostEntity: mst_postの1レコード分をマッピング
+
+@enduml
